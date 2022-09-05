@@ -1,34 +1,11 @@
----
-#################################
-#################################
-## Super Linter GitHub Actions ##
-#################################
-#################################
-name: Lint Code Base
-
-#
-# Documentation:
-# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-#
-
-#############################
-# Start the job on all push #
-#############################
+name: Super-Linter
 on:
   push:
-    branches-ignore: [master, main]
-    # Remove the line above to run when pushing to master
+    branches: [master]
   pull_request:
-    branches: [master, main]
-
-###############
-# Set the Job #
-###############
+    branches: [main]
 jobs:
-  build:
-    # Name the Job
-    name: Lint Code Base
-    # Set the agent to run on
+  Lint:
     runs-on: ubuntu-latest
 
     ##################
@@ -53,3 +30,4 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
