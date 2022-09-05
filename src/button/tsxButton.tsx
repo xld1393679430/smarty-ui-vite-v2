@@ -1,5 +1,5 @@
 import { defineComponent, PropType } from "vue";
-import "unocss/dist/";
+import "uno.css";
 
 export type IColor = "red" | "yellow" | "blue";
 
@@ -12,7 +12,7 @@ const props = {
 };
 
 export default defineComponent({
-  name: "tsxButton",
+  name: "TsxButton",
   props,
   setup(props, { slots }) {
     console.log(props);

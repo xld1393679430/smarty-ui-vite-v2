@@ -23,9 +23,10 @@ export default defineConfig({
     cssCodeSplit: true,
     lib: {
       entry: "./src/entry.ts",
-      name: "Test",
-      fileName: "test",
+      name: "MyUI",
+      fileName: "my-ui",
       formats: ["es", "cjs", "umd", "iife"],
     },
+    outDir: './dist'
   },
 });
