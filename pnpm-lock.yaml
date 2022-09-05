@@ -5,6 +5,7 @@ specifiers:
   '@types/node': ^18.7.15
   '@vitejs/plugin-vue': ^3.0.3
   '@vitejs/plugin-vue-jsx': ^2.0.0
+  husky: ^8.0.1
   unocss: ^0.45.15
   vite: ^3.0.9
   vitepress: 0.22.4
@@ -21,6 +22,7 @@ dependencies:
 
 devDependencies:
   '@types/node': registry.npmjs.org/@types/node/18.7.15
+  husky: registry.npmjs.org/husky/8.0.1
   vite: registry.npmjs.org/vite/3.0.9
   vitepress: registry.npmjs.org/vitepress/0.22.4
 
@@ -2041,6 +2043,14 @@ packages:
     version: 2.1.0
     engines: {node: '>=10.17.0'}
     dev: false
+
+  registry.npmjs.org/husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/husky/-/husky-8.0.1.tgz}
+    name: husky
+    version: 8.0.1
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   registry.npmjs.org/ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz}
