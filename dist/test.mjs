@@ -1,22 +1,49 @@
-import { defineComponent, h, createVNode, createTextVNode, openBlock, createElementBlock } from "vue";
+import { defineComponent, h, createVNode, openBlock, createElementBlock } from "vue";
 const Button = defineComponent({
   name: "SButton",
   render() {
     return h("button", null, "hello");
   }
 });
+const __uno = "";
+const props = {
+  color: {
+    type: String,
+    default: "blue"
+  },
+  icon: String
+};
 const TsxButton = defineComponent({
   name: "tsxButton",
-  render() {
-    return createVNode("button", null, [createTextVNode("button--tsx")]);
+  props,
+  setup(props2, {
+    slots
+  }) {
+    console.log(props2);
+    return () => createVNode("button", {
+      "class": `
+            py-2
+            px-4
+            shadow-md
+            text-white
+            bg-${props2.color}-500
+            border-none
+            rounded-lg
+            font-semibold
+            cursor-pointer
+            hover:bg-${props2.color}-700
+        `
+    }, [props2.icon ? createVNode("i", {
+      "class": `i-ic-baseline-${props2.icon} p-2`
+    }, null) : null, (slots == null ? void 0 : slots.default) ? slots == null ? void 0 : slots.default() : "\u9ED8\u8BA4"]);
   }
 });
 const _sfc_main = {
   name: "SFCButton"
 };
-const _export_sfc = (sfc, props) => {
+const _export_sfc = (sfc, props2) => {
   const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
+  for (const [key, val] of props2) {
     target[key] = val;
   }
   return target;

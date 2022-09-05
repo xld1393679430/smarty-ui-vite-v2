@@ -1,5 +1,5 @@
 import { defineComponent, PropType } from "vue";
-import "uno.css";
+import "unocss/dist/";
 
 export type IColor = "red" | "yellow" | "blue";
 

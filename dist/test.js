@@ -7,18 +7,45 @@ const Button = vue.defineComponent({
     return vue.h("button", null, "hello");
   }
 });
+const __uno = "";
+const props = {
+  color: {
+    type: String,
+    default: "blue"
+  },
+  icon: String
+};
 const TsxButton = vue.defineComponent({
   name: "tsxButton",
-  render() {
-    return vue.createVNode("button", null, [vue.createTextVNode("button--tsx")]);
+  props,
+  setup(props2, {
+    slots
+  }) {
+    console.log(props2);
+    return () => vue.createVNode("button", {
+      "class": `
+            py-2
+            px-4
+            shadow-md
+            text-white
+            bg-${props2.color}-500
+            border-none
+            rounded-lg
+            font-semibold
+            cursor-pointer
+            hover:bg-${props2.color}-700
+        `
+    }, [props2.icon ? vue.createVNode("i", {
+      "class": `i-ic-baseline-${props2.icon} p-2`
+    }, null) : null, (slots == null ? void 0 : slots.default) ? slots == null ? void 0 : slots.default() : "\u9ED8\u8BA4"]);
   }
 });
 const _sfc_main = {
   name: "SFCButton"
 };
-const _export_sfc = (sfc, props) => {
+const _export_sfc = (sfc, props2) => {
   const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
+  for (const [key, val] of props2) {
     target[key] = val;
   }
   return target;

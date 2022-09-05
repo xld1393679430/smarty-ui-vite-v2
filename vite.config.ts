@@ -20,6 +20,7 @@ export default defineConfig({
       },
     },
     minify: false,
+    cssCodeSplit: true,
     lib: {
       entry: "./src/entry.ts",
       name: "Test",
